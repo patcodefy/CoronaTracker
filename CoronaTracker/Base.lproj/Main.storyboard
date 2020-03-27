@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,34 +19,34 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CORONA VIRUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEV-AE-KCk">
-                                <rect key="frame" x="53.333333333333343" y="84" width="307.33333333333326" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <rect key="frame" x="118" y="84" width="178" height="38.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Heavy" family="Avenir Next Condensed" pointSize="28"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRACKER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4t-VV-m4d">
-                                <rect key="frame" x="148" y="124" width="118" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <rect key="frame" x="153.5" y="124" width="107.5" height="38.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Heavy" family="Avenir Next Condensed" pointSize="28"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wm2-0d-Rv2">
-                                <rect key="frame" x="20" y="304" width="161" height="100"/>
+                                <rect key="frame" x="20" y="312.5" width="161" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GLOBAL STATS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-Z4-0cF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GLOBAL      STATS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-Z4-0cF">
                                         <rect key="frame" x="0.0" y="0.0" width="161" height="75"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Mtx-jX-o20"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Heavy" family="Avenir Next Condensed" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iro-PB-JlV">
                                         <rect key="frame" x="0.0" y="75" width="161" height="25"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -59,22 +59,22 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CDC RESOURCES" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-Ku-J1o">
-                                <rect key="frame" x="20" y="174" width="374" height="30"/>
+                                <rect key="frame" x="20" y="182.5" width="374" height="30"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hhC-fw-ble"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Heavy" family="Avenir Next Condensed" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information about COVID-19 in the World" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="MDj-ks-z7G">
-                                <rect key="frame" x="20" y="204" width="374" height="80"/>
+                                <rect key="frame" x="20" y="212.5" width="374" height="80"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="FSk-if-M6l"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -84,7 +84,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-jc-6fn">
-                                <rect key="frame" x="230" y="304" width="164" height="100"/>
+                                <rect key="frame" x="230" y="312.5" width="164" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JANUARY 20, 2020" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-if-DWf">
                                         <rect key="frame" x="0.0" y="0.0" width="164" height="80"/>
@@ -92,7 +92,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="0tH-XM-vEU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Heavy" family="Avenir Next Condensed" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -102,7 +102,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="VWp-iS-yit"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -113,63 +113,140 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwc-nX-obC" userLabel="Pick Date Button">
-                                <rect key="frame" x="230" y="304" width="164" height="100"/>
+                                <rect key="frame" x="230" y="312.5" width="164" height="100"/>
                                 <connections>
                                     <action selector="showDatePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Aw-9B-A4G"/>
                                 </connections>
                             </button>
-                            <datePicker hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="goy-RR-sX0">
-                                <rect key="frame" x="20" y="626" width="374" height="216"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="599482800">
-                                    <!--2019-12-31 11:00:00 +0000-->
-                                </date>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </datePicker>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-nE-TOR">
+                                <rect key="frame" x="10" y="862" width="394" height="0.0"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwp-EH-dB3">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeH-fb-EbK" userLabel="Cancel">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelDatePickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OTR-n8-Hfy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Xxg-Tx-Tbc"/>
+                                            <constraint firstItem="JeH-fb-EbK" firstAttribute="leading" secondItem="fwp-EH-dB3" secondAttribute="leading" id="pMh-Qm-1Nd"/>
+                                        </constraints>
+                                    </stackView>
+                                    <datePicker opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="goy-RR-sX0">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="LgQ-SV-cBB"/>
+                                        </constraints>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="599482800">
+                                            <!--2019-12-31 11:00:00 +0000-->
+                                        </date>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="selectDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="Iw5-Pr-sW5"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="goy-RR-sX0" firstAttribute="width" secondItem="eT9-nE-TOR" secondAttribute="width" id="KYb-p8-MQR"/>
+                                    <constraint firstItem="goy-RR-sX0" firstAttribute="width" secondItem="eT9-nE-TOR" secondAttribute="width" id="OxH-PS-d9k"/>
+                                    <constraint firstAttribute="height" constant="190" id="XIk-ey-iNs"/>
+                                    <constraint firstItem="fwp-EH-dB3" firstAttribute="width" secondItem="eT9-nE-TOR" secondAttribute="width" id="u0A-Kr-Bcy"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7Z-yP-pid">
+                                <rect key="frame" x="20" y="312.5" width="161" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="showCountryPickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AmZ-2y-6oe"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-sr-cuz">
+                                <rect key="frame" x="0.0" y="599" width="414" height="263"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm6-ea-fEc" userLabel="Cancel">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelDatePickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uq2-eQ-c7s"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-fi-D6f">
+                                        <rect key="frame" x="0.0" y="47" width="414" height="216"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QCq-PU-AZs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2dC-UU-cYj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="goy-RR-sX0" secondAttribute="bottom" constant="20" id="2v2-W5-bcJ"/>
                             <constraint firstItem="Wwc-nX-obC" firstAttribute="centerY" secondItem="Mmo-jc-6fn" secondAttribute="centerY" id="3en-ud-MvH"/>
                             <constraint firstItem="wm2-0d-Rv2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4YS-zZ-ceK"/>
                             <constraint firstItem="N4t-VV-m4d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="4fb-xX-uEk"/>
+                            <constraint firstItem="x7Z-yP-pid" firstAttribute="centerY" secondItem="wm2-0d-Rv2" secondAttribute="centerY" id="4hj-jg-WIs"/>
                             <constraint firstItem="wm2-0d-Rv2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5a4-XI-aFe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hNb-sr-cuz" secondAttribute="trailing" id="68W-Bo-vjZ"/>
                             <constraint firstItem="Wwc-nX-obC" firstAttribute="width" secondItem="Mmo-jc-6fn" secondAttribute="width" id="6aX-ci-BVa"/>
                             <constraint firstItem="JEV-AE-KCk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="83o-uO-Myx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mmo-jc-6fn" secondAttribute="trailing" constant="20" id="8R8-oK-wTR"/>
+                            <constraint firstItem="x7Z-yP-pid" firstAttribute="width" secondItem="wm2-0d-Rv2" secondAttribute="width" id="8eB-Tn-9Pb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eT9-nE-TOR" secondAttribute="bottom" id="8tr-hH-7vz"/>
                             <constraint firstItem="Mmo-jc-6fn" firstAttribute="top" secondItem="MDj-ks-z7G" secondAttribute="bottom" constant="20" id="936-Md-dXd"/>
+                            <constraint firstItem="x7Z-yP-pid" firstAttribute="centerX" secondItem="wm2-0d-Rv2" secondAttribute="centerX" id="9sb-Ru-cbU"/>
                             <constraint firstItem="kjl-Ku-J1o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ANQ-ar-nxe"/>
                             <constraint firstItem="Mmo-jc-6fn" firstAttribute="top" secondItem="MDj-ks-z7G" secondAttribute="bottom" constant="20" id="BXj-FE-xJN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QCq-PU-AZs" secondAttribute="bottom" id="CXi-fP-AAx"/>
                             <constraint firstItem="wm2-0d-Rv2" firstAttribute="top" secondItem="MDj-ks-z7G" secondAttribute="bottom" constant="20" id="Fvb-ed-ZJI"/>
                             <constraint firstItem="wm2-0d-Rv2" firstAttribute="top" secondItem="MDj-ks-z7G" secondAttribute="bottom" constant="20" id="Jgd-Hw-5HS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kjl-Ku-J1o" secondAttribute="trailing" constant="20" id="LfJ-y6-rfN"/>
+                            <constraint firstItem="eT9-nE-TOR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="LlH-64-Wyt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QCq-PU-AZs" secondAttribute="trailing" id="PTL-i5-XsX"/>
                             <constraint firstItem="MDj-ks-z7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PWG-80-pdM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="goy-RR-sX0" secondAttribute="trailing" constant="20" id="TNA-m4-uDq"/>
+                            <constraint firstItem="hNb-sr-cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PyC-Ra-Nu5"/>
                             <constraint firstItem="Wwc-nX-obC" firstAttribute="centerX" secondItem="Mmo-jc-6fn" secondAttribute="centerX" id="Vvt-aN-6mP"/>
                             <constraint firstItem="kjl-Ku-J1o" firstAttribute="top" secondItem="N4t-VV-m4d" secondAttribute="bottom" constant="20" id="Wfz-SB-bs0"/>
                             <constraint firstItem="Mmo-jc-6fn" firstAttribute="centerY" secondItem="wm2-0d-Rv2" secondAttribute="centerY" id="YAB-Kz-lf9"/>
+                            <constraint firstItem="eT9-nE-TOR" firstAttribute="top" secondItem="hNb-sr-cuz" secondAttribute="bottom" id="alx-e3-yxy"/>
                             <constraint firstAttribute="trailing" secondItem="Mmo-jc-6fn" secondAttribute="trailing" constant="20" id="bJ0-1N-9Oh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eT9-nE-TOR" secondAttribute="trailing" constant="10" id="eM0-4Y-2ni"/>
                             <constraint firstItem="MDj-ks-z7G" firstAttribute="top" secondItem="kjl-Ku-J1o" secondAttribute="bottom" id="fcI-d6-ufw"/>
-                            <constraint firstItem="goy-RR-sX0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hdb-at-zgD"/>
+                            <constraint firstAttribute="trailing" secondItem="hNb-sr-cuz" secondAttribute="trailing" constant="20" symbolic="YES" id="jNB-FA-JMx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hNb-sr-cuz" secondAttribute="bottom" id="m2z-zb-IOF"/>
                             <constraint firstItem="QCq-PU-AZs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nNY-nn-x1o"/>
                             <constraint firstItem="Wwc-nX-obC" firstAttribute="height" secondItem="Mmo-jc-6fn" secondAttribute="height" id="oKP-bq-nio"/>
                             <constraint firstItem="JEV-AE-KCk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rsc-v0-9sB"/>
+                            <constraint firstItem="eT9-nE-TOR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="stL-CD-MqC"/>
                             <constraint firstItem="MDj-ks-z7G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="t3E-e4-hcl"/>
+                            <constraint firstItem="hNb-sr-cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tGA-l6-MMs"/>
                             <constraint firstItem="N4t-VV-m4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w2W-8f-QEr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mmo-jc-6fn" secondAttribute="trailing" constant="20" id="y1A-lm-w2O"/>
+                            <constraint firstItem="x7Z-yP-pid" firstAttribute="height" secondItem="wm2-0d-Rv2" secondAttribute="height" id="yWQ-fW-7rf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="countryPickerView" destination="5Cc-fi-D6f" id="3lv-bE-anX"/>
                         <outlet property="datePicker" destination="goy-RR-sX0" id="rk5-AJ-fXg"/>
+                        <outlet property="datePickerUIStackView" destination="eT9-nE-TOR" id="qjL-gw-wCw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
