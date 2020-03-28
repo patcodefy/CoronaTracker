@@ -30,7 +30,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wm2-0d-Rv2">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wm2-0d-Rv2" userLabel="Global Stats View">
                                 <rect key="frame" x="20" y="312.5" width="161" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GLOBAL      STATS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-Z4-0cF">
@@ -83,7 +83,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-jc-6fn">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-jc-6fn" userLabel="Date Picker View">
                                 <rect key="frame" x="230" y="312.5" width="164" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JANUARY 20, 2020" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-if-DWf">
@@ -119,20 +119,20 @@
                                 </connections>
                             </button>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-nE-TOR">
-                                <rect key="frame" x="10" y="862" width="394" height="0.0"/>
+                                <rect key="frame" x="10" y="674" width="394" height="188"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwp-EH-dB3">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeH-fb-EbK" userLabel="Cancel">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeH-fb-EbK" userLabel="Done">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
-                                                <state key="normal" title="Cancel">
+                                                <state key="normal" title="Done">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="cancelDatePickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OTR-n8-Hfy"/>
+                                                    <action selector="doneDatePickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yvi-fw-TUw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -143,11 +143,11 @@
                                         </constraints>
                                     </stackView>
                                     <datePicker opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="goy-RR-sX0">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="30" width="394" height="158"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="LgQ-SV-cBB"/>
+                                            <constraint firstAttribute="height" constant="158" id="LgQ-SV-cBB"/>
                                         </constraints>
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="599482800">
                                             <!--2019-12-31 11:00:00 +0000-->
@@ -162,10 +162,10 @@
                                         </connections>
                                     </datePicker>
                                 </subviews>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="goy-RR-sX0" firstAttribute="width" secondItem="eT9-nE-TOR" secondAttribute="width" id="KYb-p8-MQR"/>
                                     <constraint firstItem="goy-RR-sX0" firstAttribute="width" secondItem="eT9-nE-TOR" secondAttribute="width" id="OxH-PS-d9k"/>
-                                    <constraint firstAttribute="height" constant="190" id="XIk-ey-iNs"/>
                                     <constraint firstItem="fwp-EH-dB3" firstAttribute="width" secondItem="eT9-nE-TOR" secondAttribute="width" id="u0A-Kr-Bcy"/>
                                 </constraints>
                             </stackView>
@@ -176,26 +176,39 @@
                                     <action selector="showCountryPickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AmZ-2y-6oe"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-sr-cuz">
-                                <rect key="frame" x="0.0" y="599" width="414" height="263"/>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-sr-cuz" userLabel="Country Picker View">
+                                <rect key="frame" x="10" y="674" width="394" height="188"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm6-ea-fEc" userLabel="Cancel">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm6-ea-fEc">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="38"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="fSQ-L4-YRc"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelDatePickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uq2-eQ-c7s"/>
+                                            <action selector="doneCountryPickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="awy-OE-5gL"/>
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-fi-D6f">
-                                        <rect key="frame" x="0.0" y="47" width="414" height="216"/>
+                                        <rect key="frame" x="0.0" y="38" width="394" height="150"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pickerView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="qm2-vZ-nTA"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJJ-SB-7DI">
+                                <rect key="frame" x="20" y="312.5" width="161" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="showCountryPickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zqS-yn-Dha"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -205,12 +218,14 @@
                             <constraint firstItem="N4t-VV-m4d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="4fb-xX-uEk"/>
                             <constraint firstItem="x7Z-yP-pid" firstAttribute="centerY" secondItem="wm2-0d-Rv2" secondAttribute="centerY" id="4hj-jg-WIs"/>
                             <constraint firstItem="wm2-0d-Rv2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5a4-XI-aFe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hNb-sr-cuz" secondAttribute="trailing" id="68W-Bo-vjZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hNb-sr-cuz" secondAttribute="trailing" constant="10" id="68W-Bo-vjZ"/>
                             <constraint firstItem="Wwc-nX-obC" firstAttribute="width" secondItem="Mmo-jc-6fn" secondAttribute="width" id="6aX-ci-BVa"/>
                             <constraint firstItem="JEV-AE-KCk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="83o-uO-Myx"/>
                             <constraint firstItem="x7Z-yP-pid" firstAttribute="width" secondItem="wm2-0d-Rv2" secondAttribute="width" id="8eB-Tn-9Pb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eT9-nE-TOR" secondAttribute="bottom" id="8tr-hH-7vz"/>
+                            <constraint firstItem="zJJ-SB-7DI" firstAttribute="width" secondItem="wm2-0d-Rv2" secondAttribute="width" id="90a-M3-ZJJ"/>
                             <constraint firstItem="Mmo-jc-6fn" firstAttribute="top" secondItem="MDj-ks-z7G" secondAttribute="bottom" constant="20" id="936-Md-dXd"/>
+                            <constraint firstItem="zJJ-SB-7DI" firstAttribute="centerY" secondItem="wm2-0d-Rv2" secondAttribute="centerY" id="9px-5G-ftk"/>
                             <constraint firstItem="x7Z-yP-pid" firstAttribute="centerX" secondItem="wm2-0d-Rv2" secondAttribute="centerX" id="9sb-Ru-cbU"/>
                             <constraint firstItem="kjl-Ku-J1o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ANQ-ar-nxe"/>
                             <constraint firstItem="Mmo-jc-6fn" firstAttribute="top" secondItem="MDj-ks-z7G" secondAttribute="bottom" constant="20" id="BXj-FE-xJN"/>
@@ -221,22 +236,23 @@
                             <constraint firstItem="eT9-nE-TOR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="LlH-64-Wyt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QCq-PU-AZs" secondAttribute="trailing" id="PTL-i5-XsX"/>
                             <constraint firstItem="MDj-ks-z7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PWG-80-pdM"/>
-                            <constraint firstItem="hNb-sr-cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PyC-Ra-Nu5"/>
+                            <constraint firstItem="hNb-sr-cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PyC-Ra-Nu5"/>
+                            <constraint firstItem="hNb-sr-cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="RyM-vx-j2e"/>
                             <constraint firstItem="Wwc-nX-obC" firstAttribute="centerX" secondItem="Mmo-jc-6fn" secondAttribute="centerX" id="Vvt-aN-6mP"/>
+                            <constraint firstItem="zJJ-SB-7DI" firstAttribute="height" secondItem="wm2-0d-Rv2" secondAttribute="height" id="W3y-nw-Cvv"/>
                             <constraint firstItem="kjl-Ku-J1o" firstAttribute="top" secondItem="N4t-VV-m4d" secondAttribute="bottom" constant="20" id="Wfz-SB-bs0"/>
                             <constraint firstItem="Mmo-jc-6fn" firstAttribute="centerY" secondItem="wm2-0d-Rv2" secondAttribute="centerY" id="YAB-Kz-lf9"/>
-                            <constraint firstItem="eT9-nE-TOR" firstAttribute="top" secondItem="hNb-sr-cuz" secondAttribute="bottom" id="alx-e3-yxy"/>
                             <constraint firstAttribute="trailing" secondItem="Mmo-jc-6fn" secondAttribute="trailing" constant="20" id="bJ0-1N-9Oh"/>
+                            <constraint firstItem="zJJ-SB-7DI" firstAttribute="centerX" secondItem="wm2-0d-Rv2" secondAttribute="centerX" id="eG6-Vt-kY5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eT9-nE-TOR" secondAttribute="trailing" constant="10" id="eM0-4Y-2ni"/>
                             <constraint firstItem="MDj-ks-z7G" firstAttribute="top" secondItem="kjl-Ku-J1o" secondAttribute="bottom" id="fcI-d6-ufw"/>
-                            <constraint firstAttribute="trailing" secondItem="hNb-sr-cuz" secondAttribute="trailing" constant="20" symbolic="YES" id="jNB-FA-JMx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hNb-sr-cuz" secondAttribute="bottom" id="m2z-zb-IOF"/>
                             <constraint firstItem="QCq-PU-AZs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nNY-nn-x1o"/>
                             <constraint firstItem="Wwc-nX-obC" firstAttribute="height" secondItem="Mmo-jc-6fn" secondAttribute="height" id="oKP-bq-nio"/>
                             <constraint firstItem="JEV-AE-KCk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rsc-v0-9sB"/>
                             <constraint firstItem="eT9-nE-TOR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="stL-CD-MqC"/>
                             <constraint firstItem="MDj-ks-z7G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="t3E-e4-hcl"/>
-                            <constraint firstItem="hNb-sr-cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tGA-l6-MMs"/>
+                            <constraint firstItem="hNb-sr-cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tGA-l6-MMs"/>
                             <constraint firstItem="N4t-VV-m4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w2W-8f-QEr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mmo-jc-6fn" secondAttribute="trailing" constant="20" id="y1A-lm-w2O"/>
                             <constraint firstItem="x7Z-yP-pid" firstAttribute="height" secondItem="wm2-0d-Rv2" secondAttribute="height" id="yWQ-fW-7rf"/>
@@ -245,6 +261,7 @@
                     </view>
                     <connections>
                         <outlet property="countryPickerView" destination="5Cc-fi-D6f" id="3lv-bE-anX"/>
+                        <outlet property="countrySelectorView" destination="hNb-sr-cuz" id="i0s-gq-IuE"/>
                         <outlet property="datePicker" destination="goy-RR-sX0" id="rk5-AJ-fXg"/>
                         <outlet property="datePickerUIStackView" destination="eT9-nE-TOR" id="qjL-gw-wCw"/>
                     </connections>
