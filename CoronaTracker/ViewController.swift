@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var datePickerUIStackView: UIStackView!
     @IBOutlet weak var countryPickerView: UIPickerView!
+    @IBOutlet weak var countrySelectorView: UIStackView!
     var countryList: [String] = []
     var date = ""
     override func viewDidLoad() {
@@ -25,9 +26,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
         }
-    }
-
-    @IBAction func showCountryPickerBtn(_ sender: UIButton) {
     }
     @IBAction func getData(_ sender: UIButton) {
         print ("button clicked")
@@ -51,17 +49,35 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         date = dateFormatter.string(from: datePicker.date)
         print (date)
     }
-    @IBAction func cancelDatePickerBtn(_ sender: UIButton) {
+    @IBAction func doneDatePickerBtn(_ sender: UIButton) {
         datePickerUIStackView.isHidden = true
         datePicker.backgroundColor = .clear
     }
-    @IBAction func doneDatePickerBtn(_ sender: UIButton) {
+    
+    @IBAction func showCountryPickerBtn(_ sender: UIButton) {
+        if datePickerUIStackView.isHidden {
+            countrySelectorView.isHidden = false
+        } else {
+            datePickerUIStackView.isHidden = true
+            countrySelectorView.isHidden = false
+        }
+        
+        
     }
     @IBAction func showDatePicker(_ sender: UIButton) {
-        datePickerUIStackView.isHidden = false
-        datePicker.backgroundColor = .red
+        if countrySelectorView.isHidden {
+            datePickerUIStackView.isHidden = false
+            datePicker.backgroundColor = .red
+        } else {
+            countrySelectorView.isHidden = true
+            datePickerUIStackView.isHidden = false
+        }
+        
     }
     
+    @IBAction func doneCountryPickerBtn(_ sender: UIButton) {
+        countrySelectorView.isHidden = true
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
