@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    
    
     
 
@@ -16,17 +18,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var datePickerUIStackView: UIStackView!
     @IBOutlet weak var countryPickerView: UIPickerView!
     @IBOutlet weak var countrySelectorView: UIStackView!
+    @IBOutlet weak var statsCollectionView: UICollectionView!
+    
     var countryList: [String] = []
     var date = ""
+    let reuseIdentifier = "statsCell"
+    var items = ["title 1", "title 2","title 1", "title 2","title 1", "title 2"]
     override func viewDidLoad() {
         super.viewDidLoad()
         countryPickerView.delegate = self
         countryPickerView.dataSource = self
+        statsCollectionView.delegate = self
+        statsCollectionView.dataSource = self
         for countryCode in NSLocale.isoCountryCodes {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
         }
     }
+    //Actions
     @IBAction func getData(_ sender: UIButton) {
         print ("button clicked")
         let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=RW")!
@@ -78,6 +87,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func doneCountryPickerBtn(_ sender: UIButton) {
         countrySelectorView.isHidden = true
     }
+    
+    //Country Picker Protocols
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -90,6 +101,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print (countryList[row])
+    }
+    
+    //Stats CollectionView protocols
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! StatsCollectionViewCell
+        cell.titleUILabel.text = items[indexPath.item]
+        return cell
     }
 }
 

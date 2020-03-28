@@ -17,6 +17,7 @@
 		EB588E142429BA3200EE3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB588E122429BA3200EE3E0F /* Main.storyboard */; };
 		EB588E162429BA3400EE3E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB588E152429BA3400EE3E0F /* Assets.xcassets */; };
 		EB588E192429BA3400EE3E0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB588E172429BA3400EE3E0F /* LaunchScreen.storyboard */; };
+		EBACCE3F242FE17B0053CBD7 /* StatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EB588E152429BA3400EE3E0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB588E182429BA3400EE3E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB588E1A2429BA3400EE3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				EB2611B8242BEBAC0085E884 /* UIButtonDesignable.swift */,
 				EB2611BB242C3D820085E884 /* UIViewExtension.swift */,
 				EB2611BD242C3F3C0085E884 /* UIButtonExtension.swift */,
+				EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */,
 			);
 			path = CoronaTracker;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				EB2611BC242C3D820085E884 /* UIViewExtension.swift in Sources */,
 				EB2611B7242BEB720085E884 /* UILabelDesignable.swift in Sources */,
 				EB588E0F2429BA3200EE3E0F /* SceneDelegate.swift in Sources */,
+				EBACCE3F242FE17B0053CBD7 /* StatsCollectionViewCell.swift in Sources */,
 				EB2611B9242BEBAC0085E884 /* UIButtonDesignable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
