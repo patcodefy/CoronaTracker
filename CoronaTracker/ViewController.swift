@@ -30,28 +30,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         countryPickerView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.dataSource = self
+        self.getData()
         for countryCode in NSLocale.isoCountryCodes {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
         }
     }
     //Actions
-    @IBAction func getData(_ sender: UIButton) {
-        print ("button clicked")
-        let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=RW")!
-
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] else {return}
-            guard let countryData = json["countrydata"] else {return}
-            //print(String(data: data, encoding: .utf8)!)
-            print (countryData)
-           
-        }
-
-        task.resume()
-    }
-    
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -61,11 +46,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func doneDatePickerBtn(_ sender: UIButton) {
         datePickerUIStackView.isHidden = true
         datePicker.backgroundColor = .clear
+        statsCollectionView.isHidden = false
     }
     
     @IBAction func showCountryPickerBtn(_ sender: UIButton) {
         if datePickerUIStackView.isHidden {
             countrySelectorView.isHidden = false
+            statsCollectionView.isHidden = true
         } else {
             datePickerUIStackView.isHidden = true
             countrySelectorView.isHidden = false
@@ -77,6 +64,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if countrySelectorView.isHidden {
             datePickerUIStackView.isHidden = false
             datePicker.backgroundColor = .red
+            statsCollectionView.isHidden = true
         } else {
             countrySelectorView.isHidden = true
             datePickerUIStackView.isHidden = false
@@ -86,6 +74,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func doneCountryPickerBtn(_ sender: UIButton) {
         countrySelectorView.isHidden = true
+        statsCollectionView.isHidden = false
     }
     
     //Country Picker Protocols
@@ -112,6 +101,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! StatsCollectionViewCell
         cell.titleUILabel.text = items[indexPath.item]
         return cell
+    }
+    
+    //Request
+    func getData() {
+        let decoder = JSONDecoder()
+
+        print ("button clicked")
+        let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=RW")!
+
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else { return }
+            let countryData = try? decoder.decode(Countrydata.self, from: data)
+            print (countryData?.total_active_cases)
+        }
+
+        task.resume()
     }
 }
 
