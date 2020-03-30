@@ -23,14 +23,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var countryList: [String] = []
     var date = ""
     let reuseIdentifier = "statsCell"
-    var items = ["title 1", "title 2","title 1", "title 2","title 1", "title 2"]
+    var statsData:Response?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         countryPickerView.delegate = self
         countryPickerView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.dataSource = self
-        self.getData()
+        self.getData { (results) in
+            if (results != nil){
+                 DispatchQueue.main.async {
+                    self.statsData = results
+                    
+                }
+            }
+        }
+        
         for countryCode in NSLocale.isoCountryCodes {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
@@ -94,29 +103,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //Stats CollectionView protocols
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! StatsCollectionViewCell
-        cell.titleUILabel.text = items[indexPath.item]
+        print ("\(self.statsData?.countrydata.first?.total_active_cases)")
+        cell.titleUILabel.text = "\(self.statsData?.countrydata.first?.total_active_cases)"
+        
         return cell
     }
     
     //Request
-    func getData() {
+    func getData(completionHandler: @escaping(Response?) -> Void)  {
         let decoder = JSONDecoder()
-
-        print ("button clicked")
         let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=RW")!
-
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             guard let data = data else { return }
-            let countryData = try? decoder.decode(Countrydata.self, from: data)
-            print (countryData?.total_active_cases)
+            guard let results = try? decoder.decode(Response.self, from: data) else {return}
+            completionHandler (results)
+            
         }
-
         task.resume()
     }
+    
 }
 
