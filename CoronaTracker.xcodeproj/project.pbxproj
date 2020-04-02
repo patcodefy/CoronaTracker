@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB2611B7242BEB720085E884 /* UILabelDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2611B6242BEB720085E884 /* UILabelDesignable.swift */; };
-		EB2611B9242BEBAC0085E884 /* UIButtonDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2611B8242BEBAC0085E884 /* UIButtonDesignable.swift */; };
 		EB2611BC242C3D820085E884 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2611BB242C3D820085E884 /* UIViewExtension.swift */; };
 		EB2611BE242C3F3C0085E884 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2611BD242C3F3C0085E884 /* UIButtonExtension.swift */; };
 		EB588E0D2429BA3200EE3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB588E0C2429BA3200EE3E0F /* AppDelegate.swift */; };
@@ -24,8 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EB2611B6242BEB720085E884 /* UILabelDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDesignable.swift; sourceTree = "<group>"; };
-		EB2611B8242BEBAC0085E884 /* UIButtonDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonDesignable.swift; sourceTree = "<group>"; };
 		EB2611BB242C3D820085E884 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		EB2611BD242C3F3C0085E884 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		EB588E092429BA3200EE3E0F /* Corona Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Corona Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,23 +68,53 @@
 		EB588E0B2429BA3200EE3E0F /* CoronaTracker */ = {
 			isa = PBXGroup;
 			children = (
+				EBD5B50F24362C1C009D530A /* Controllers */,
+				EBD5B50E24362BF7009D530A /* UI */,
+				EBD5B50D24362BC6009D530A /* Extensions */,
+				EBD5B50C24362B78009D530A /* Models */,
 				EB588E0C2429BA3200EE3E0F /* AppDelegate.swift */,
-				EB6B6E46243128CE0090BD04 /* Info.swift */,
 				EB588E0E2429BA3200EE3E0F /* SceneDelegate.swift */,
-				EB588E102429BA3200EE3E0F /* ViewController.swift */,
-				EB588E122429BA3200EE3E0F /* Main.storyboard */,
 				EB588E152429BA3400EE3E0F /* Assets.xcassets */,
-				EB588E172429BA3400EE3E0F /* LaunchScreen.storyboard */,
 				EB588E1A2429BA3400EE3E0F /* Info.plist */,
-				EB2611B6242BEB720085E884 /* UILabelDesignable.swift */,
-				EB2611B8242BEBAC0085E884 /* UIButtonDesignable.swift */,
-				EB2611BB242C3D820085E884 /* UIViewExtension.swift */,
-				EB2611BD242C3F3C0085E884 /* UIButtonExtension.swift */,
-				EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */,
-				EB6B6E44243128700090BD04 /* Countrydata.swift */,
-				EB6049EC243189A100537A98 /* Response.swift */,
 			);
 			path = CoronaTracker;
+			sourceTree = "<group>";
+		};
+		EBD5B50C24362B78009D530A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB6B6E44243128700090BD04 /* Countrydata.swift */,
+				EB6B6E46243128CE0090BD04 /* Info.swift */,
+				EB6049EC243189A100537A98 /* Response.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EBD5B50D24362BC6009D530A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB2611BB242C3D820085E884 /* UIViewExtension.swift */,
+				EB2611BD242C3F3C0085E884 /* UIButtonExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EBD5B50E24362BF7009D530A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EB588E172429BA3400EE3E0F /* LaunchScreen.storyboard */,
+				EB588E122429BA3200EE3E0F /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EBD5B50F24362C1C009D530A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */,
+				EB588E102429BA3200EE3E0F /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,12 +193,10 @@
 				EB588E0D2429BA3200EE3E0F /* AppDelegate.swift in Sources */,
 				EB2611BC242C3D820085E884 /* UIViewExtension.swift in Sources */,
 				EB6B6E45243128700090BD04 /* Countrydata.swift in Sources */,
-				EB2611B7242BEB720085E884 /* UILabelDesignable.swift in Sources */,
 				EB588E0F2429BA3200EE3E0F /* SceneDelegate.swift in Sources */,
 				EB6049ED243189A100537A98 /* Response.swift in Sources */,
 				EBACCE3F242FE17B0053CBD7 /* StatsCollectionViewCell.swift in Sources */,
 				EB6B6E47243128CE0090BD04 /* Info.swift in Sources */,
-				EB2611B9242BEBAC0085E884 /* UIButtonDesignable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

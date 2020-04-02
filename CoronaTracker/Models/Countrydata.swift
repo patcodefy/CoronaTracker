@@ -18,4 +18,6 @@ struct Countrydata: Codable {
     let total_new_deaths_today: Int
     let total_active_cases: Int
     let total_serious_cases: Int
+    let total_danger_rank: Int
 }
+

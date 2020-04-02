@@ -9,11 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    
-   
-    
-
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var datePickerUIStackView: UIStackView!
     @IBOutlet weak var countryPickerView: UIPickerView!
@@ -22,29 +17,34 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var countryList: [String] = []
     var date = ""
+    var country = "RW"
     let reuseIdentifier = "statsCell"
-    var statsData:Response?
-    
+    var statsData:[Int] = []
+    var titles = [
+        "total cases",
+        "total recovered",
+        "total unresolved",
+        "total deaths",
+        "new cases today",
+        "new deaths today",
+        "new active cases",
+        "serious cases",
+        "danger rank",
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         countryPickerView.delegate = self
         countryPickerView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.dataSource = self
-        self.getData { (results) in
-            if (results != nil){
-                 DispatchQueue.main.async {
-                    self.statsData = results
-                    
-                }
-            }
-        }
         
         for countryCode in NSLocale.isoCountryCodes {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
         }
+        
     }
+   
     //Actions
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -95,36 +95,77 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return countryList.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         return countryList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        self.country = countryNameCode(for: countryList[row])
+        print (self.country)
         print (countryList[row])
     }
     
     //Stats CollectionView protocols
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return titles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! StatsCollectionViewCell
-        print ("\(self.statsData?.countrydata.first?.total_active_cases)")
-        cell.titleUILabel.text = "\(self.statsData?.countrydata.first?.total_active_cases)"
+        self.getData{ (results) in
+            self.statsData.append((results.countrydata.first!.total_cases))
+            self.statsData.append((results.countrydata.first!.total_recovered))
+            self.statsData.append((results.countrydata.first!.total_unresolved))
+            self.statsData.append((results.countrydata.first!.total_deaths))
+            self.statsData.append((results.countrydata.first!.total_new_cases_today))
+            self.statsData.append((results.countrydata.first!.total_new_deaths_today))
+            self.statsData.append((results.countrydata.first!.total_active_cases))
+            self.statsData.append((results.countrydata.first!.total_serious_cases))
+            self.statsData.append((results.countrydata.first!.total_danger_rank))
+            DispatchQueue.main.async {
+                cell.statsUILabel.text = String(self.statsData[indexPath.item])
+            }
+        }
         
+        cell.titleUILabel.text = self.titles[indexPath.item].uppercased()
+        //print (self.statsData[0])
+        //cell.statsUILabel.text = String(self.statsData[indexPath.item])
         return cell
     }
     
     //Request
-    func getData(completionHandler: @escaping(Response?) -> Void)  {
+    func getData(completionHandler: @escaping(Response) ->Void)  {
         let decoder = JSONDecoder()
-        let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=RW")!
+        let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=\(self.country)")!
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            guard let results = try? decoder.decode(Response.self, from: data) else {return}
-            completionHandler (results)
+            guard let data = data else {
+                print ("data = nil")
+                return
+                
+            }
+            guard let results = try? decoder.decode(Response.self, from: data) else {
+                print ("results = nil")
+                return
+                
+            }
+            completionHandler(results)
+            
+            
+
             
         }
         task.resume()
+    }
+    
+    private func countryNameCode(for fullCountryName : String) -> String {
+        for localeCode in NSLocale.isoCountryCodes {
+            let identifier = NSLocale(localeIdentifier: localeCode)
+            let countryName = identifier.displayName(forKey: NSLocale.Key.countryCode, value: localeCode)
+            if fullCountryName.lowercased() == countryName?.lowercased() {
+                return localeCode 
+            }
+        }
+        return ""
     }
     
 }
