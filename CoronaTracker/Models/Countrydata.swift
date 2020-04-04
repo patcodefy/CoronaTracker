@@ -19,5 +19,48 @@ struct Countrydata: Codable {
     let total_active_cases: Int
     let total_serious_cases: Int
     let total_danger_rank: Int
+    var data: [StatsCellData] {
+        get{
+            return [
+                StatsCellData(
+                    title: "total cases",
+                    stats: total_cases
+                ),
+                StatsCellData(
+                    title: "total recovered",
+                    stats: total_recovered
+                ),
+                StatsCellData(
+                    title:"total unresolved",
+                    stats:total_unresolved
+                ),
+                StatsCellData(
+                    title:"total deaths",
+                    stats: total_deaths
+                ),
+                StatsCellData(
+                    title: "total new cases today",
+                    stats: total_new_cases_today
+                ),
+                StatsCellData(
+                    title:"total new deaths today",
+                    stats:total_new_deaths_today
+                ),
+                StatsCellData(
+                    title: "total active cases",
+                    stats: total_active_cases
+                ),
+                StatsCellData(
+                    title: "total serious cases",
+                    stats:total_serious_cases
+                ),
+                StatsCellData(
+                    title: "total danger rank",
+                    stats: total_danger_rank
+                )
+            ]
+            
+        }
+    }
 }
 

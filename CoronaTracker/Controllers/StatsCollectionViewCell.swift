@@ -11,4 +11,11 @@ import UIKit
 class StatsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleUILabel: UILabel!
     @IBOutlet weak var statsUILabel: UILabel!
+    var cellData:StatsCellData! {
+        didSet {
+            titleUILabel.text = cellData.title
+            statsUILabel.text = "\(cellData.stats)"
+        }
+    }
+    
 }

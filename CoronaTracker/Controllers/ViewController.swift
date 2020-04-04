@@ -18,19 +18,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var countryList: [String] = []
     var date = ""
     let reuseIdentifier = "statsCell"
-    var statsData:[Int] = []
-    var titles = [
-        "total cases",
-        "total recovered",
-        "total unresolved",
-        "total deaths",
-        "new cases today",
-        "new deaths today",
-        "total active cases",
-        "serious cases",
-        "danger rank",
-    ]
-    var country : String = "RW"
+    var countryData: Countrydata?
+    var country : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         countryPickerView.delegate = self
@@ -42,6 +31,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
         }
+        
+
         
     }
    
@@ -55,7 +46,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func doneDatePickerBtn(_ sender: UIButton) {
         datePickerUIStackView.isHidden = true
         datePicker.backgroundColor = .clear
-        statsCollectionView.reloadData()
         statsCollectionView.isHidden = false
     }
     
@@ -83,8 +73,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func doneCountryPickerBtn(_ sender: UIButton) {
+        loadData()
         countrySelectorView.isHidden = true
-        statsCollectionView.reloadData()
         statsCollectionView.isHidden = false
     }
     
@@ -101,33 +91,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return countryList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         self.country = countryNameCode(for: countryList[row])
         print (self.country)
-        print (countryList[row])
+        //print (countryList[row])
     }
     
     //Stats CollectionView protocols
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return countryData?.data.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! StatsCollectionViewCell
-        getData(code: self.country){ (results) in
-            self.assignData(results: results)
-            DispatchQueue.main.async {
-                cell.statsUILabel.text = String(self.statsData[indexPath.item])
-            }
-        }
-        cell.titleUILabel.text = self.titles[indexPath.item].uppercased()
+        cell.cellData = countryData?.data[indexPath.item]
         return cell
     }
     
     
     //Request
-    func getData(code: String, completionHandler: @escaping(Response) ->Void)  {
+    private func getData(completionHandler: @escaping(Response) ->Void)  {
         let decoder = JSONDecoder()
-        let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=\(code)")!
+        let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=\(self.country)")!
         print (url)
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             guard let data = data else {
@@ -139,12 +122,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 return
                 
             }
-            completionHandler(results)
+            DispatchQueue.main.async {
+                completionHandler(results)
+            }
+            
         }
         task.resume()
     }
     
-    func countryNameCode(for fullCountryName : String) -> String {
+    private func countryNameCode(for fullCountryName : String) -> String {
         for localeCode in NSLocale.isoCountryCodes {
             let identifier = NSLocale(localeIdentifier: localeCode)
             let countryName = identifier.displayName(forKey: NSLocale.Key.countryCode, value: localeCode)
@@ -154,17 +140,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         return ""
     }
-    func assignData(results: Response){
-        self.statsData.append((results.countrydata.first!.total_cases))
-        self.statsData.append((results.countrydata.first!.total_recovered))
-        self.statsData.append((results.countrydata.first!.total_unresolved))
-        self.statsData.append((results.countrydata.first!.total_deaths))
-        self.statsData.append((results.countrydata.first!.total_new_cases_today))
-        self.statsData.append((results.countrydata.first!.total_new_deaths_today))
-        self.statsData.append((results.countrydata.first!.total_active_cases))
-        self.statsData.append((results.countrydata.first!.total_serious_cases))
-        self.statsData.append((results.countrydata.first!.total_danger_rank))
+    private func loadData(){
+        getData{ (results) in
+            self.countryData = results.countrydata.first
+            self.statsCollectionView.reloadData()
+        }
+        
     }
+    
     
 }
 
