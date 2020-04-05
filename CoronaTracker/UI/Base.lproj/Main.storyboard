@@ -82,7 +82,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-jc-6fn" userLabel="Date Picker View">
                                 <rect key="frame" x="230" y="312.5" width="164" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JANUARY 20, 2020" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-if-DWf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-if-DWf">
                                         <rect key="frame" x="0.0" y="0.0" width="164" height="80"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -108,7 +108,7 @@
                                     <constraint firstAttribute="width" constant="164" id="fKO-P2-kv0"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwc-nX-obC" userLabel="Pick Date Button">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwc-nX-obC" userLabel="Pick Date Button">
                                 <rect key="frame" x="230" y="312.5" width="164" height="100"/>
                                 <connections>
                                     <action selector="showDatePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Aw-9B-A4G"/>
@@ -321,6 +321,7 @@
                         <outlet property="countrySelectorView" destination="hNb-sr-cuz" id="i0s-gq-IuE"/>
                         <outlet property="datePicker" destination="goy-RR-sX0" id="rk5-AJ-fXg"/>
                         <outlet property="datePickerUIStackView" destination="eT9-nE-TOR" id="qjL-gw-wCw"/>
+                        <outlet property="dateUILabel" destination="Itm-if-DWf" id="fhQ-IK-agY"/>
                         <outlet property="statsCollectionView" destination="IZc-V5-3V7" id="f25-jl-hcG"/>
                     </connections>
                 </viewController>

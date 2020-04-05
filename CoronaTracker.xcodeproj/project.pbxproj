@@ -19,6 +19,7 @@
 		EB6B6E45243128700090BD04 /* Countrydata.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B6E44243128700090BD04 /* Countrydata.swift */; };
 		EB6B6E47243128CE0090BD04 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B6E46243128CE0090BD04 /* Info.swift */; };
 		EB8328642437A44F0073A4D8 /* StatsCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8328632437A44F0073A4D8 /* StatsCellData.swift */; };
+		EB8328702439424E0073A4D8 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83286F2439424E0073A4D8 /* CountryList.swift */; };
 		EBACCE3F242FE17B0053CBD7 /* StatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		EB6B6E44243128700090BD04 /* Countrydata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countrydata.swift; sourceTree = "<group>"; };
 		EB6B6E46243128CE0090BD04 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		EB8328632437A44F0073A4D8 /* StatsCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellData.swift; sourceTree = "<group>"; };
+		EB83286F2439424E0073A4D8 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
 		EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				EB6B6E44243128700090BD04 /* Countrydata.swift */,
+				EB83286F2439424E0073A4D8 /* CountryList.swift */,
 				EB6B6E46243128CE0090BD04 /* Info.swift */,
 				EB6049EC243189A100537A98 /* Response.swift */,
 				EB8328632437A44F0073A4D8 /* StatsCellData.swift */,
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8328702439424E0073A4D8 /* CountryList.swift in Sources */,
 				EB2611BE242C3F3C0085E884 /* UIButtonExtension.swift in Sources */,
 				EB588E112429BA3200EE3E0F /* ViewController.swift in Sources */,
 				EB588E0D2429BA3200EE3E0F /* AppDelegate.swift in Sources */,
