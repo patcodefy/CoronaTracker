@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var datePickerUIStackView: UIStackView!
+    @IBOutlet weak var statsSourceUILabel: UILabel!
     @IBOutlet weak var countryPickerView: UIPickerView!
     @IBOutlet weak var countrySelectorView: UIStackView!
     @IBOutlet weak var statsCollectionView: UICollectionView!
@@ -19,19 +20,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var country : String = ""
     let reuseIdentifier = "statsCell"
     var countryData: Countrydata?
+    var globalData: GlobalResults?
     var countryCodes = CountryList.init().codes
     var countryList: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.maximumDate = Date()
-        dateUILabel.text = currentDate(date: Date())
+        dateUILabel.text = currentDate(date: Date()).uppercased()
         countryPickerView.delegate = self
         countryPickerView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.dataSource = self
+        loadData(stats: "global")
         for countryCode in countryCodes {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
-            print (id)
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
         }
     }
@@ -41,7 +43,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         date = dateFormatter.string(from: datePicker.date)
-        print (date)
     }
     @IBAction func doneDatePickerBtn(_ sender: UIButton) {
         datePickerUIStackView.isHidden = true
@@ -57,8 +58,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             datePickerUIStackView.isHidden = true
             countrySelectorView.isHidden = false
         }
-        
-        
     }
     @IBAction func showDatePicker(_ sender: UIButton) {
         if countrySelectorView.isHidden {
@@ -69,11 +68,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             countrySelectorView.isHidden = true
             datePickerUIStackView.isHidden = false
         }
-        
     }
     
     @IBAction func doneCountryPickerBtn(_ sender: UIButton) {
-        loadData()
+        loadData(stats: "country")
         countrySelectorView.isHidden = true
         statsCollectionView.isHidden = false
     }
@@ -87,12 +85,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return countryList.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         return countryList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.country = countryCodes[row]
-        //print (self.country)
+        statsSourceUILabel.text = "\(countryList[row])".uppercased()
     }
     
     //Stats CollectionView protocols
@@ -110,40 +107,44 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     private func getData(completionHandler: @escaping(Response) ->Void)  {
         let decoder = JSONDecoder()
         let url = URL(string: "https://thevirustracker.com/free-api?countryTotal=\(self.country)")!
-        print (url)
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else {
-                print ("data = nil")
-                return
-            }
-            guard let results = try? decoder.decode(Response.self, from: data) else {
-                print ("results = nil")
-                return
-                
-            }
+            guard let data = data else {return}
+            guard let results = try? decoder.decode(Response.self, from: data) else {return}
             DispatchQueue.main.async {
                 completionHandler(results)
             }
-            
         }
         task.resume()
     }
-//    private func countryNameCode(for fullCountryName : String) -> String {
-//        for localeCode in NSLocale.isoCountryCodes {
-//            let identifier = NSLocale(localeIdentifier: localeCode)
-//            let countryName = identifier.displayName(forKey: NSLocale.Key.countryCode, value: localeCode)
-//            if fullCountryName.lowercased() == countryName?.lowercased() {
-//                return localeCode
-//            }
-//        }
-//        return ""
-//    }
-    private func loadData(){
-        getData{ (results) in
-            self.countryData = results.countrydata.first
-            self.statsCollectionView.reloadData()
+    
+    //Request Global Data
+    private func getGlobalData(completionHandler: @escaping(GlobalResponse) ->Void)  {
+        let decoder = JSONDecoder()
+        let url = URL(string: "https://api.thevirustracker.com/free-api?global=stats")!
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else {return}
+            guard let results = try? decoder.decode(GlobalResponse.self, from: data) else {return}
+            DispatchQueue.main.async {
+                completionHandler(results)
+            }
         }
-        
+        task.resume()
+    }
+    
+    private func loadData(stats: String){
+        if stats == "country" {
+            getData{ (results) in
+                self.countryData = results.countrydata.first
+                self.statsCollectionView.reloadData()
+            }
+        } else {
+            getGlobalData{(globalResults) in
+                self.globalData = globalResults.results.first
+                self.statsCollectionView.reloadData()
+                self.statsCollectionView.isHidden = false
+                
+            }
+        }
     }
     
     private func currentDate(date: Date, style: String = "medium") -> String {
@@ -155,7 +156,5 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         return dateFormatter.string(from: Date())
     }
-    
-    
 }
 

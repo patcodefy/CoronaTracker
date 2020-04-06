@@ -11,10 +11,15 @@ import UIKit
 class StatsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleUILabel: UILabel!
     @IBOutlet weak var statsUILabel: UILabel!
+    @IBOutlet weak var backgroundUILabel: UILabel!
     var cellData:StatsCellData! {
         didSet {
-            titleUILabel.text = cellData.title
+            titleUILabel.text = cellData.title.uppercased()
             statsUILabel.text = "\(cellData.stats)"
+            backgroundUILabel.borderWidth = 0.5
+            backgroundUILabel.borderColor = .darkGray
+            backgroundUILabel.cornerRadius = 5
+            
         }
     }
     
