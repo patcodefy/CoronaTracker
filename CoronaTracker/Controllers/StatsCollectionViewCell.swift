@@ -15,12 +15,16 @@ class StatsCollectionViewCell: UICollectionViewCell {
     var cellData:StatsCellData! {
         didSet {
             titleUILabel.text = cellData.title.uppercased()
-            statsUILabel.text = "\(cellData.stats)"
+            statsUILabel.text = formatNumber(number: cellData.stats)
             backgroundUILabel.borderWidth = 0.5
             backgroundUILabel.borderColor = .darkGray
             backgroundUILabel.cornerRadius = 5
             
         }
+    }
+    
+    private func formatNumber(number: Int) -> String{
+        return String(format: "%ld %@", locale: Locale.current, number, "")
     }
     
 }

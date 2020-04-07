@@ -16,9 +16,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var countrySelectorView: UIStackView!
     @IBOutlet weak var statsCollectionView: UICollectionView!
     @IBOutlet weak var dateUILabel: UILabel!
+    @IBOutlet weak var topInfoUILabel: UILabel!
+    @IBOutlet weak var topInfoUIStackView: UIStackView!
+    
     var date = ""
     var country : String = ""
     let reuseIdentifier = "statsCell"
+    var getGlobal = true
     var countryData: Countrydata?
     var globalData: GlobalResults?
     var countryCodes = CountryList.init().codes
@@ -31,11 +35,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         countryPickerView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.dataSource = self
-        loadData(stats: "global")
         for countryCode in countryCodes {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
         }
+        loadData(isGlobal: getGlobal)
     }
    
     //Actions
@@ -71,7 +75,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func doneCountryPickerBtn(_ sender: UIButton) {
-        loadData(stats: "country")
+        loadData(isGlobal: false)
         countrySelectorView.isHidden = true
         statsCollectionView.isHidden = false
     }
@@ -94,11 +98,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //Stats CollectionView protocols
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return countryData?.data.count ?? 0
+        if getGlobal {
+            return globalData?.data.count ?? 0
+        } else {
+            return countryData?.data.count ?? 0
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! StatsCollectionViewCell
-        cell.cellData = countryData?.data[indexPath.item]
+        if getGlobal {
+            cell.cellData = globalData?.data[indexPath.item]
+        } else {
+            cell.cellData = countryData?.data[indexPath.item]
+        }
+        
         return cell
     }
     
@@ -131,9 +144,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         task.resume()
     }
     
-    private func loadData(stats: String){
-        if stats == "country" {
+    private func loadData(isGlobal: Bool){
+        if !isGlobal {
             getData{ (results) in
+                self.getGlobal = false
                 self.countryData = results.countrydata.first
                 self.statsCollectionView.reloadData()
             }
@@ -141,10 +155,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             getGlobalData{(globalResults) in
                 self.globalData = globalResults.results.first
                 self.statsCollectionView.reloadData()
-                self.statsCollectionView.isHidden = false
-                
             }
         }
+        
     }
     
     private func currentDate(date: Date, style: String = "medium") -> String {

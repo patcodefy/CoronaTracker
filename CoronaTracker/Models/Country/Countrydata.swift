@@ -39,23 +39,23 @@ struct Countrydata: Codable {
                     stats: total_deaths
                 ),
                 StatsCellData(
-                    title: "total new cases today",
+                    title: "new cases today",
                     stats: total_new_cases_today
                 ),
                 StatsCellData(
-                    title:"total new deaths today",
+                    title:"new deaths today",
                     stats:total_new_deaths_today
                 ),
                 StatsCellData(
-                    title: "total active cases",
+                    title: "active cases",
                     stats: total_active_cases
                 ),
                 StatsCellData(
-                    title: "total serious cases",
+                    title: "serious cases",
                     stats:total_serious_cases
                 ),
                 StatsCellData(
-                    title: "total danger rank",
+                    title: "danger rank",
                     stats: total_danger_rank
                 )
             ]

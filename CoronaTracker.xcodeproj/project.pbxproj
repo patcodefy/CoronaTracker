@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		EB2611BB242C3D820085E884 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		EB2611BD242C3F3C0085E884 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		EB588E092429BA3200EE3E0F /* Corona Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Corona Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB588E092429BA3200EE3E0F /* COVID-19 Virus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID-19 Virus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB588E0C2429BA3200EE3E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB588E0E2429BA3200EE3E0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EB588E102429BA3200EE3E0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		EB588E0A2429BA3200EE3E0F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB588E092429BA3200EE3E0F /* Corona Tracker.app */,
+				EB588E092429BA3200EE3E0F /* COVID-19 Virus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 			);
 			name = CoronaTracker;
 			productName = CoronaTracker;
-			productReference = EB588E092429BA3200EE3E0F /* Corona Tracker.app */;
+			productReference = EB588E092429BA3200EE3E0F /* COVID-19 Virus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -379,8 +379,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pat.CoronaTracker;
-				PRODUCT_NAME = "Corona Tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pat.CoronaVirusTracker;
+				PRODUCT_NAME = "COVID-19 Virus";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -397,8 +397,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pat.CoronaTracker;
-				PRODUCT_NAME = "Corona Tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pat.CoronaVirusTracker;
+				PRODUCT_NAME = "COVID-19 Virus";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
