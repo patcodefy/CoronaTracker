@@ -15,13 +15,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var statsCollectionView: UICollectionView!
     @IBOutlet weak var dateUILabel: UILabel!
     
-    var countryCode : String = ""
-    let reuseIdentifier = "statsCell"
-    var getGlobal = true
-    var countryData: Countrydata?
-    var globalData: GlobalResults?
-    var countryCodes = CountryList.init().codes
-    var countryList: [String] = []
+    private var countryCode : String = ""
+    private let reuseIdentifier = "statsCell"
+    private var getGlobal = true
+    private var countryData: Countrydata?
+    private var globalData: GlobalResults?
+    private var countryCodes = CountryList.init().codes
+    private var countryList: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     @IBAction func doneCountryPickerBtn(_ sender: UIButton) {
-        loadData(isGlobal: false)
+        getGlobal = false
+        loadData(isGlobal: getGlobal)
         countrySelectorView.isHidden = true
         statsCollectionView.isHidden = false
     }
@@ -84,23 +85,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     private func loadData(isGlobal: Bool){
-        print ("country code => \(self.countryCode)")
         let request = NetworkRequest (
             countryCode: self.countryCode
         )
-        if isGlobal {
+        if isGlobal || self.countryCode == "" {
             request.getGlobalData{(results) in
             self.globalData = results
                 self.statsCollectionView.reloadData()
             }
-            
         } else {
             request.getCountryData{ (results) in
                 self.countryData = results
                 self.statsCollectionView.reloadData()
             }
         }
-        
     }
     
     private func currentDate(date: Date, style: String = "medium") -> String {
