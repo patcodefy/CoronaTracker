@@ -16,9 +16,7 @@ class StatsCollectionViewCell: UICollectionViewCell {
         didSet {
             titleUILabel.text = cellData.title.uppercased()
             statsUILabel.text = formatNumber(number: cellData.stats)
-            backgroundUILabel.borderWidth = 0.5
-            backgroundUILabel.borderColor = .darkGray
-            backgroundUILabel.cornerRadius = 5
+            uiDesign()
             
         }
     }
@@ -27,4 +25,9 @@ class StatsCollectionViewCell: UICollectionViewCell {
         return String(format: "%ld %@", locale: Locale.current, number, "")
     }
     
+    private func uiDesign (){
+        backgroundUILabel.borderWidth = 0.5
+        backgroundUILabel.borderColor = .darkGray
+        backgroundUILabel.cornerRadius = 5
+    }
 }
