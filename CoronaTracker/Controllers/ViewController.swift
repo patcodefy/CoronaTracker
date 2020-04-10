@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     private var globalData: GlobalResults?
     private var countryCodes = CountryList.init().codes
     private var countryList: [String] = []
+    private var sourceLabelText = "global   stats"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         loadData(isGlobal: getGlobal)
         countrySelectorView.isHidden = true
         statsCollectionView.isHidden = false
+        statsSourceUILabel.text = sourceLabelText.uppercased()
     }
     
+    @IBAction func cancelCountryPickerBtn(_ sender: UIButton) {
+        countrySelectorView.isHidden = true
+        statsCollectionView.isHidden = false
+        
+    }
     //Country Picker Protocols
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -63,7 +70,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.countryCode = countryCodes[row]
-        statsSourceUILabel.text = "\(countryList[row])".uppercased()
+        sourceLabelText = "\(countryList[row])"
     }
     
     //Stats CollectionView protocols
