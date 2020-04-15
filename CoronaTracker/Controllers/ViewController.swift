@@ -23,7 +23,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     private var countryList: [String] = []
     private var sourceLabelText = "global   stats"
     private let notification = NotificationController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateUILabel.text = currentDate(date: Date()).uppercased()
@@ -98,9 +97,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         )
         if isGlobal || self.countryCode == "" {
             request.getGlobalData{(results) in
-            self.globalData = results
+                self.globalData = results
                 self.statsCollectionView.reloadData()
             }
+            
         } else {
             request.getCountryData{ (results) in
                 self.countryData = results
@@ -117,6 +117,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             dateFormatter.dateStyle = .medium
         }
         return dateFormatter.string(from: Date())
+    }
+    
+    private func alert (){
+        let alert = UIAlertController(title: "OOPS!!!", message: "Something went wrong. Please try again later.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
