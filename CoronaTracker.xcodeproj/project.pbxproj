@@ -24,6 +24,7 @@
 		EB98B602243ABDB500EB6DE2 /* GlobalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB98B601243ABDB500EB6DE2 /* GlobalResponse.swift */; };
 		EB98B604243ABDD300EB6DE2 /* GlobalResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB98B603243ABDD300EB6DE2 /* GlobalResults.swift */; };
 		EBACCE3F242FE17B0053CBD7 /* StatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */; };
+		EBC43AFE244603D80008EA71 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC43AFD244603D80008EA71 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EB98B601243ABDB500EB6DE2 /* GlobalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalResponse.swift; sourceTree = "<group>"; };
 		EB98B603243ABDD300EB6DE2 /* GlobalResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalResults.swift; sourceTree = "<group>"; };
 		EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewCell.swift; sourceTree = "<group>"; };
+		EBC43AFD244603D80008EA71 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				EBACCE3E242FE17B0053CBD7 /* StatsCollectionViewCell.swift */,
 				EB588E102429BA3200EE3E0F /* ViewController.swift */,
+				EBC43AFD244603D80008EA71 /* NotificationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC43AFE244603D80008EA71 /* NotificationController.swift in Sources */,
 				EB0E0A5F2440A7F600C69675 /* NetworkRequest.swift in Sources */,
 				EB8328702439424E0073A4D8 /* CountryList.swift in Sources */,
 				EB2611BE242C3F3C0085E884 /* UIButtonExtension.swift in Sources */,

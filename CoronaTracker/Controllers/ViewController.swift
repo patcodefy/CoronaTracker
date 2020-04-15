@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var statsSourceUILabel: UILabel!
     @IBOutlet weak var countryPickerView: UIPickerView!
@@ -23,6 +22,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     private var countryCodes = CountryList.init().codes
     private var countryList: [String] = []
     private var sourceLabelText = "global   stats"
+    private let notification = NotificationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         countryPickerView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.dataSource = self
+        notification.notification()
         for code in countryCodes {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
             countryList.append(NSLocale.init(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country Not Found")
@@ -117,5 +118,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         return dateFormatter.string(from: Date())
     }
+    
 }
 
