@@ -19,15 +19,15 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CORONAVIRUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoo-Ck-HSz">
-                                <rect key="frame" x="77.5" y="427" width="259.5" height="42"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <rect key="frame" x="52.5" y="414" width="309" height="68.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Heavy" family="Avenir Next Condensed" pointSize="50"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHX-vs-Soz">
-                                <rect key="frame" x="163" y="463" width="88" height="30"/>
+                                <rect key="frame" x="163" y="472" width="88" height="34.5"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,10 +38,10 @@
                             <constraint firstItem="bI6-7f-zam" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E23-XG-bNx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bI6-7f-zam" secondAttribute="trailing" id="GLy-bK-UHX"/>
                             <constraint firstItem="zoo-Ck-HSz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="IBi-bH-nxd"/>
-                            <constraint firstItem="JHX-vs-Soz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="30" id="N6O-1G-hlo"/>
+                            <constraint firstItem="JHX-vs-Soz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XMx-aR-trr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bI6-7f-zam" secondAttribute="bottom" id="awU-qR-MRf"/>
                             <constraint firstItem="zoo-Ck-HSz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gsb-AM-mHh"/>
-                            <constraint firstItem="JHX-vs-Soz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oFN-oW-sbd"/>
+                            <constraint firstItem="JHX-vs-Soz" firstAttribute="top" secondItem="zoo-Ck-HSz" secondAttribute="topMargin" constant="50" id="iIs-cg-T4z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
